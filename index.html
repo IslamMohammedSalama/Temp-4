@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Normalize  -->
+    <link rel="stylesheet" href="css/normelize.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Main Framework File -->
+    <link rel="stylesheet" href="css/framework.css">
+    <!-- Main Css File -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="page d-flex p-relative">
+        <aside class="bg-white p-20">
+            <h3 class="p-relative txt-c">Elzero</h3>
+            <ul>
+                <li>
+                    <a href="index.html" class="active d-flex align-center fs-14 c-black rad-6 p-10"><i
+                            class="fa-regular fa-chart-bar fa-fw"></i><span>Dashboard</span></a>
+                </li>
+                <li>
+                    <a href="pages/profile.html" class=" d-flex align-center fs-14 c-black rad-6 p-10"><i
+                            class="fa-regular fa-user fa-fw"></i><span>Profile</span></a>
+                </li>
+                <li>
+                    <a href="pages/projects.html" class=" d-flex align-center fs-14 c-black rad-6 p-10"><i
+                            class="fa-solid fa-diagram-project fa-fw"></i><span>Projects</span></a>
+                </li>
+                <li>
+                    <a href="pages/courses.html" class=" d-flex align-center fs-14 c-black rad-6 p-10"><i
+                            class="fa-solid fa-graduation-cap fa-fw"></i><span>Courses</span></a>
+                </li>
+                <li>
+                    <a href="pages/frinds.html" class=" d-flex align-center fs-14 c-black rad-6 p-10"><i
+                            class="fa-regular fa-circle-user fa-fw"></i><span>Frinds</span></a>
+                </li>
+                <li>
+                    <a href="pages/files.html" class=" d-flex align-center fs-14 c-black rad-6 p-10"><i
+                            class="fa-regular fa-file fa-fw"></i><span>Files</span></a>
+                </li>
+                <li>
+                    <a href="pages/plans.html" class=" d-flex align-center fs-14 c-black rad-6 p-10"><i
+                            class="fa-regular fa-credit-card fa-fw"></i><span>Plans</span></a>
+                </li>
+                <li>
+                    <a href="pages/settings.html" class=" d-flex align-center fs-14 c-black rad-6 p-10"><i
+                            class="fa-solid fa-gear fa-fw"></i><span>Settings</span></a>
+                </li>
+            </ul>
+        </aside>
+        <div class=" content ">
+            <header class=" between-flex bg-white p-15">
+                <div class="search p-relative">
+                    <input type="search" class="p-10" placeholder="Type A Keyword" name="keyword">
+                </div>
+                <div class="icons d-flex align-center">
+                    <span class="notfi p-relative">
+                        <i class="fa-regular fa-bell fa-lg"></i>
+                    </span>
+                    <img src="imgs/avatar.png" alt="">
+                </div>
+            </header>
+            <h1 class="p-relative">Dashboard</h1>
+            <div class="wapper d-grid gap-20">
+                <div class="welcome p-relative txt-c-mobile rad-10 bg-white block-mobile">
+                    <div class="intro d-flex space-between bg-eee p-20">
+                        <div>
+                            <h2>Welcome</h2>
+                            <p class="c-grey mt-5">Elzero</p>
+                        </div>
+                        <img class="hide-mobile" src="imgs/welcome.png" alt="">
+                    </div>
+                    <img class="avatar" src="imgs/avatar.png" alt="">
+                    <div class="body txt-c mt-20 mb-20 p-20 d-flex block-mobile">
+                        <div>
+                            Osama Elzero
+                            <span class="d-block fs-14 mt-10 c-grey">Devloper</span>
+                        </div>
+                        <div>
+                            80
+                            <span class="d-block fs-14 mt-10 c-grey">Projects</span>
+                        </div>
+                        <div>
+                            $8500
+                            <span class="d-block fs-14 mt-10 c-grey">Earned</span>
+                        </div>
+                    </div>
+                    <a href="pages/profile.html"
+                        class="visit d-block bg-blue p-15 rad-50 txt-c c-white fs-14">Profle</a>
+                </div>
+                <div class="quick-draft rad-10 p-20 bg-white">
+                    <h2 class="mb-10">Quick Draft</h2>
+                    <p class="fs-15 mb-20 c-grey">Write A Draft For Your Ideas</p>
+                    <form action method="post">
+                        <input type="text" class="title p-15 rad-50 bg-eee w-full mb-20" placeholder="Title"
+                            name="title">
+                        <textarea class="w-full mb-20 bg-eee p-15 rad-25" name="text"
+                            placeholder="Your Thought"></textarea>
+                        <input type="submit" value="Save"
+                            class="bg-blue b-none d-block rad-50 w-full c-white p-15 fs-14" name="submit">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<script>
+    let a = 1_00;
+    let b = 2_00.5;
+    let c = 1e2;
+    let d = 2.4;
+    // Find The Smallest Number On Intager 
+    console.log(Math.round(Math.min(a, b, c, d)));
+
+    // Use a and d to get 10000
+    console.log(Math.pow(a, Math.round(d)));
+
+    // Get Int 2 With Four Ways With d
+    console.log(Math.round(d));
+    console.log(Math.floor(d));
+    console.log(parseInt(d));
+    console.log(Math.trunc(d));
+
+    // Use Vars b + d to get This Values
+    Safe
+    console.log((Math.floor(b) / Math.ceil(d)).toFixed(2));// 66.67 => string
+    console.log(Math.round(b) / Math.ceil(d));// 67 => number
+
+
+</script>
+
+</html>
