@@ -21,8 +21,9 @@
 </head>
 
 <body>
-
+    <!-- Start Page -->
     <div class="page d-flex p-relative">
+        <!-- Start Side Bar -->
         <aside class="bg-white p-20">
             <h3 class="p-relative txt-c">Elzero</h3>
             <ul>
@@ -60,7 +61,10 @@
                 </li>
             </ul>
         </aside>
-        <div class=" content ">
+        <!-- End Side Bar -->
+        <!-- Start Page Content -->
+        <div class="content">
+            <!-- Start Header -->
             <header class=" between-flex bg-white p-15">
                 <div class="search p-relative">
                     <input type="search" class="p-10" placeholder="Type A Keyword" name="keyword">
@@ -72,8 +76,11 @@
                     <img src="imgs/avatar.png" alt="">
                 </div>
             </header>
+            <!-- End Header -->
             <h1 class="p-relative">Dashboard</h1>
+            <!-- Start Widgets -->
             <div class="wapper d-grid gap-20">
+                <!-- Start Welcome Widget -->
                 <div class="welcome p-relative txt-c-mobile rad-10 bg-white d-flex f-column">
                     <div class="intro d-flex space-between bg-eee p-20">
                         <div>
@@ -100,6 +107,8 @@
                     <a href="pages/profile.html"
                         class="visit d-block bg-blue p-10 rad-50 txt-c c-white fs-14">Profle</a>
                 </div>
+                <!-- End Welcome Widget -->
+                <!-- Start Quick Draft Widget -->
                 <div class="quick-draft rad-10 p-20 bg-white">
                     <h2 class="mb-10">Quick Draft</h2>
                     <p class="fs-15 mb-20 c-grey">Write A Draft For Your Ideas</p>
@@ -112,6 +121,8 @@
                             class="bg-blue b-none d-block rad-50 w-full c-white p-15 fs-14" name="submit">
                     </form>
                 </div>
+                <!-- End Quick Draft Widget -->
+                <!-- Start Yearly Targets Widget -->
                 <div class="targets bg-white rad-10 p-20 d-flex f-column">
                     <h2 class="mb-10">Yearly Targets</h2>
                     <p class="c-grey fs-15 mb-20">Targets Of The Year</p>
@@ -167,6 +178,8 @@
                     </div>
 
                 </div>
+                <!-- End Yearly Targets Widget -->
+                <!-- Start Tickets Statistics Widget -->
                 <div class="tikets p-20 rad-10 bg-white f-column d-flex">
                     <h2 class="mb-10">Tickets Statistics</h2>
                     <p class="mb-20 c-grey">Everything About Support Tickets</p>
@@ -193,8 +206,10 @@
                         </div>
                     </div>
                 </div>
+                <!-- End Tickets Statistics Widget -->
+                <!-- Start Latest News Widget -->
                 <div class="latest-news p-20 rad-10 bg-white d-flex f-column">
-                    <h2 class="mb-10">Latest News</h2>
+                    <h2 class="mb-20">Latest News</h2>
                     <ul class="news d-flex f-column space-between f-1">
                         <li class="new d-flex align-center">
                             <img src="imgs/news-01.png" alt="" class="">
@@ -230,8 +245,10 @@
                         </li>
                     </ul>
                 </div>
+                <!-- End Latest News Widget -->
+                <!-- Start Latest Tasks Widget -->
                 <div class="latest-tasks p-20 rad-10 bg-white d-flex f-column">
-                    <h2 class="mb-10">Latest Tasks</h2>
+                    <h2 class="mb-20">Latest Tasks</h2>
                     <ul class="d-flex f-column f-1 space-between">
                         <li class="task between-flex">
                             <div class="info f-1">
@@ -271,20 +288,136 @@
 
                     </ul>
                 </div>
-                <div class="p-20 rad-10 bg-white">
-                    <h2 class="mb-10">Top Search Items</h2>
-                    <ul class="table">
-
+                <!-- End Latest Tasks Widget -->
+                <!-- Start Top Search Words Widget -->
+                <div class="top-search-words p-20 rad-10 bg-white d-flex f-column">
+                    <h2 class="mb-20">Top Search Items</h2>
+                    <ul class="table d-flex f-column space-between f-1">
+                        <li class="d-flex space-between pb-15 pt-15 head c-grey">
+                            <span>Keyword</span>
+                            <span>Search Count</span>
+                        </li>
+                        <li class="d-flex space-between pb-15 pt-15 ">
+                            <span>Programming</span>
+                            <span class="btn-shape bg-eee fs-13">220</span>
+                        </li>
+                        <li class="d-flex space-between pb-15 pt-15 ">
+                            <span>JavaScript</span>
+                            <span class="btn-shape bg-eee fs-13">220</span>
+                        </li>
+                        <li class="d-flex space-between pb-15 pt-15 ">
+                            <span>PHP</span>
+                            <span class="btn-shape bg-eee fs-13">220</span>
+                        </li>
+                        <li class="d-flex space-between pb-15 pt-15 ">
+                            <span>Code</span>
+                            <span class="btn-shape bg-eee fs-13">220</span>
+                        </li>
+                        <li class="d-flex space-between pb-15 pt-15 ">
+                            <span>Design</span>
+                            <span class="btn-shape bg-eee fs-13">220</span>
+                        </li>
+                        <li class="d-flex space-between pb-15 pt-15 ">
+                            <span>Logic</span>
+                            <span class="btn-shape bg-eee fs-13">220</span>
+                        </li>
                     </ul>
                 </div>
+                <!-- End Top Search Words Widget -->
+                <!-- Start Latest Uploades Files Widget -->
+                <div class="latest-uploads p-20 rad-10 bg-white d-flex f-column">
+                    <h2 class="mb-20">Latest Uploads</h2>
+                    <ul class="d-flex f-column f-1 space-between">
+                        <li class="between-flex mb-10 pb-10">
+                            <div class="d-flex align-center">
+                                <img src="imgs/pdf.svg" alt="" class="mr-10">
+                                <div>
+                                    <span class="d-block">my-file.pdf</span>
+                                    <span class="fs-15 c-grey">Elzero</span>
+                                </div>
+                            </div>
+                            <div class="btn-shape fs-13 bg-eee">2.9MB</div>
+                        </li>
+                        <li class="between-flex mb-10 pb-10">
+                            <div class="d-flex align-center">
+                                <img src="imgs/avi.svg" alt="" class="mr-10">
+                                <div>
+                                    <span class="d-block">my-Video-file.pdf</span>
+                                    <span class="fs-15 c-grey">Admin</span>
+                                </div>
+                            </div>
+                            <div class="btn-shape fs-13 bg-eee">4.9MB</div>
+                        </li>
+                        <li class="between-flex mb-10 pb-10">
+                            <div class="d-flex align-center">
+                                <img src="imgs/psd.svg" alt="" class="mr-10">
+                                <div>
+                                    <span class="d-block">my-psd-file.pdf</span>
+                                    <span class="fs-15 c-grey">Osama</span>
+                                </div>
+                            </div>
+                            <div class="btn-shape fs-13 bg-eee">4.5MB</div>
+                        </li>
+                        <li class="between-flex mb-10 pb-10">
+                            <div class="d-flex align-center">
+                                <img src="imgs/zip.svg" alt="" class="mr-10">
+                                <div>
+                                    <span class="d-block">my-zip-file.pdf</span>
+                                    <span class="fs-15 c-grey">User</span>
+                                </div>
+                            </div>
+                            <div class="btn-shape fs-13 bg-eee">8.9MB</div>
+                        </li>
+                        <li class="between-flex mb-10 pb-10">
+                            <div class="d-flex align-center">
+                                <img src="imgs/dll.svg" alt="" class="mr-10">
+                                <div>
+                                    <span class="d-block">my-DLL-file.pdf</span>
+                                    <span class="fs-15 c-grey">Admin</span>
+                                </div>
+                            </div>
+                            <div class="btn-shape fs-13 bg-eee">4.9MB</div>
+                        </li>
+                        <li class="between-flex">
+                            <div class="d-flex align-center">
+                                <img src="imgs/eps.svg" alt="" class="mr-10">
+                                <div>
+                                    <span class="d-block">my-Eps-file.pdf</span>
+                                    <span class="fs-15 c-grey">Desinger</span>
+                                </div>
+                            </div>
+                            <div class="btn-shape fs-13 bg-eee">8.9MB</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Latest Uploades Files Widget -->
+                <!-- Start Last Project Progress Widget -->
+                <div class="last-project-progress p-20 rad-10 bg-white d-flex f-column">
+                    <h2 class="mb-20">Last Project Progress</h2>
+                    <ul class="d-flex space-between f-1 p-relative f-column">
+                        <li class="mt-25 d-flex align-center done ">Got The Project</li>
+                        <li class="mt-25 d-flex align-center done ">Started The Project</li>
+                        <li class="mt-25 d-flex align-center done ">The Project About To Finish</li>
+                        <li class="mt-25 d-flex align-center current ">Test The Project</li>
+                        <li class="mt-25 d-flex align-center incomplate">Finish The Project & Get Money</li>
+                    </ul>
+                </div>
+                <!-- End Last Project Progress Widget -->
+                <!-- Start Reminders Widget -->
                 <div class="p-20 rad-10 bg-white"></div>
+                <!-- End Reminders Widget -->
+                <!-- Start Latest Post Widget -->
                 <div class="p-20 rad-10 bg-white"></div>
+                <!-- End Latest Post Widget -->
+                <!-- Start Social Media Stats Files Widget -->
                 <div class="p-20 rad-10 bg-white"></div>
-                <div class="p-20 rad-10 bg-white"></div>
-                <div class="p-20 rad-10 bg-white"></div>
+                <!-- End Social Media Stats Files Widget -->
             </div>
+            <!-- End Widgets -->
         </div>
+        <!-- End Page Content -->
     </div>
+    <!-- End Page -->
 </body>
 
 <script>
