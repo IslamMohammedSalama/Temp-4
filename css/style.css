@@ -427,7 +427,7 @@ aside ul a.active {
 .targets .target-row .prog>span>span::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: 1px;
     left: 50%;
     border: 5px solid;
     transform: translate(-50%, 100%);
