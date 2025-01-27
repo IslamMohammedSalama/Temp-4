@@ -605,9 +605,13 @@
     console.log(Math.trunc(d));
 
     // Use Vars b + d to get This Values
-    
+
     console.log((Math.floor(b) / Math.ceil(d)).toFixed(2));// 66.67 => string
     console.log(Math.round(b) / Math.ceil(d));// 67 => number
+    let content = document.querySelector(".content") ;
+    let elm = document.createElement("h2")
+    elm.innerHTML = window.innerWidth ;
+    content.appendChild(elm)
 
 
 </script>
