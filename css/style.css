@@ -14,6 +14,7 @@
     -webkit-tap-highlight-color: transparent;
     margin: 0;
     padding: 0;
+    caret-color: var(--blue-color);
 }
 
 ul {
@@ -95,7 +96,7 @@ aside {
     width: 220px;
     box-shadow: 0 0 10px #ddd;
     position: fixed;
-    height: 100%;
+    height: 100vh;
     top: 0;
     left: 0;
 }
@@ -212,6 +213,7 @@ aside ul a.active {
     color: var(--grey-color);
 }
 
+
 .content header input {
     border: none;
     padding-left: 30px;
@@ -221,7 +223,6 @@ aside ul a.active {
     width: 150px;
     /* margin-left: 5px; */
     transition: var(--main-transition);
-    font-size: 13.3333px;
 }
 
 @media (min-width:400px) {
@@ -244,6 +245,25 @@ aside ul a.active {
     width: 10px;
     height: 10px;
     border-radius: 50%;
+}
+
+@media (max-width:767px) {
+    .content header {
+        padding: 15px 10px 15px 5px;
+    }
+
+    .content header .search::before {
+        left: 5px;
+    }
+
+    .content header input {
+        padding-left: 22.5px;
+        width: 140px;
+    }
+
+    .content header img {
+        margin-left: 10px;
+    }
 }
 
 /* End Header */
@@ -641,6 +661,24 @@ aside ul a.active {
     transition: var(--main-transition);
 }
 
+@media (max-width:767px) {
+    .social-media ul li i {
+        width: 100%;
+        height: 52px;
+    }
+
+    .social-media ul li {
+        padding-left: 15px;
+        padding-top: 67px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-media ul li>a {
+        margin-top: 10px;
+    }
+}
+
 .social-media ul li i:hover {
     transform: rotate(1turn);
 }
@@ -678,12 +716,13 @@ aside ul a.active {
     position: relative;
 }
 
-.projects table td , .projects table th {
+.projects table td,
+.projects table th {
     position: relative;
     padding: 15px;
 }
 
-.projects  td {
+.projects td {
     border-bottom:
         1px solid #eee;
     border-left:
@@ -706,11 +745,11 @@ aside ul a.active {
     }
 }
 
-.projects table  span {
+.projects table span {
     white-space: nowrap
 }
 
-.projects table >tr:last-of-type td {
+.projects table>tr:last-of-type td {
     &:first-child {
         border-bottom-left-radius: 10px;
     }
@@ -720,7 +759,7 @@ aside ul a.active {
     }
 }
 
-.projects table  tr:hover td {
+.projects table tr:hover td {
     background-color: #faf7f7;
     color: black;
 }
