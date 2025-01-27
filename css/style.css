@@ -318,13 +318,21 @@ aside ul a.active {
     align-items: center;
 }
 
-.welcome .body div:nth-of-type(2) {
-    border-left: 1px solid #eee;
-    border-right: 1px solid #eee;
+@media (min-width:768px) {
+    .welcome .body div:nth-of-type(2) {
+        border-left: 1px solid #eee;
+        border-right: 1px solid #eee;
+    }
 }
 
 .welcome .body>div {
     flex: 1;
+}
+
+@media (max-width: 767px) {
+    .welcome .body>div:not(:last-child) {
+        margin-bottom: 20px;
+    }
 }
 
 .welcome .visit {
