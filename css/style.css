@@ -337,8 +337,8 @@ aside ul a.active {
 
 .welcome .visit {
     transition: var(--main-transition);
-    margin: 0 20px 20px;
-    width: calc(100% - (20px * 2));
+    margin: 0 15px 15px;
+    width: calc(100% -(15px * 2));
 }
 
 .welcome .visit:hover {
@@ -716,33 +716,58 @@ aside ul a.active {
 .projects .table-responsive {
     overflow-x: auto;
     overflow-y: hidden;
+    position: relative;
 }
 
 .projects table {
     min-width: 820px;
-    border-spacing: 0;
+    border-spacing: 5px;
     position: relative;
 }
 
 .projects table td,
 .projects table th {
     position: relative;
+    border-radius: 10px;
     padding: 15px;
 }
 
 .projects td {
-    border-bottom:
-        1px solid #eee;
-    border-left:
-        1px solid #eee;
-    transition:
-        0.3s;
+    border: 1px solid transparent;
+    /* border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee; */
+    border: 1px solid #eee;
+    transition: var(--main-transition);
+    background-color: transparent;
+    border-radius: 10px;
+}
+/* Helight Columns Using Css */
+/* .projects table:has(tbody >tr > *:nth-child(1):hover) tbody>tr>*:nth-child(1),
+.projects table:has(tbody >tr > *:nth-child(2):hover) tbody>tr>*:nth-child(2),
+.projects table:has(tbody >tr > *:nth-child(3):hover) tbody>tr>*:nth-child(3),
+.projects table:has(tbody >tr > *:nth-child(4):hover) tbody>tr>*:nth-child(4),
+.projects table:has(tbody >tr > *:nth-child(5):hover) tbody>tr>*:nth-child(5),
+.projects table:has(tbody >tr > *:nth-child(6):hover) tbody>tr>*:nth-child(6) {
+    background-color: #faf7f7;
+} */
+
+.highlight-column {
+    background-color: #faf7f7 !important;
+}
+
+.projects table tr:hover td {
+    background-color: #faf7f7;
+}
+
+.projects table td:hover {
+    border-color: var(--blue-color);
+    color: var(--blue-color);
 }
 
 .projects table th {
     background-color: #eee;
     font-weight: bold;
-    z-index: 1;
+    z-index: 100 !important;
 
     &:first-child {
         border-top-left-radius: 10px;
@@ -757,25 +782,6 @@ aside ul a.active {
     white-space: nowrap
 }
 
-.projects table>tr:last-of-type td {
-    &:first-child {
-        border-bottom-left-radius: 10px;
-    }
-
-    &:last-child {
-        border-bottom-right-radius: 10px;
-    }
-}
-
-.projects table tr:hover td {
-    background-color: #faf7f7;
-    color: black;
-}
-
-.projects table tbody tr td:last-child {
-    border-right:
-        1px solid #eee;
-}
 
 .projects table img:not(:first-child) {
     margin-left: -20px;
