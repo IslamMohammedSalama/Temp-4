@@ -172,10 +172,9 @@ aside ul {
         padding-bottom: 20px;
     }
 
-    aside ul a {
-        padding: 10px 0;
+    aside ul li a {
         width: 100%;
-        text-align: center;
+        justify-content: center;
     }
 
     aside ul::-webkit-scrollbar {
