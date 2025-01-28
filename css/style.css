@@ -173,7 +173,7 @@ aside ul {
     }
 
     aside ul a {
-        padding: 10px 0 ;
+        padding: 10px 0;
         width: 100%;
         text-align: center;
     }
@@ -707,8 +707,10 @@ aside ul {
     }
 }
 
-.social-media ul li i:hover {
-    transform: rotate(1turn);
+@media (min-width:768px) {
+    .social-media ul li i:hover {
+        transform: rotate(1turn);
+    }
 }
 
 .social-media ul li.twitter i,
