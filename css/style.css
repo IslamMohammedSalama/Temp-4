@@ -742,14 +742,14 @@ aside ul a.active {
     border-radius: 10px;
 }
 /* Helight Columns Using Css */
-/* .projects table:has(tbody >tr > *:nth-child(1):hover) tbody>tr>*:nth-child(1),
+.projects table:has(tbody >tr > *:nth-child(1):hover) tbody>tr>*:nth-child(1),
 .projects table:has(tbody >tr > *:nth-child(2):hover) tbody>tr>*:nth-child(2),
 .projects table:has(tbody >tr > *:nth-child(3):hover) tbody>tr>*:nth-child(3),
 .projects table:has(tbody >tr > *:nth-child(4):hover) tbody>tr>*:nth-child(4),
 .projects table:has(tbody >tr > *:nth-child(5):hover) tbody>tr>*:nth-child(5),
 .projects table:has(tbody >tr > *:nth-child(6):hover) tbody>tr>*:nth-child(6) {
     background-color: #faf7f7;
-} */
+}
 
 .highlight-column {
     background-color: #faf7f7 !important;
