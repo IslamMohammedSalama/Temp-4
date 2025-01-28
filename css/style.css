@@ -172,6 +172,12 @@ aside ul {
         padding-bottom: 20px;
     }
 
+    aside ul a {
+        padding: 10px 0 ;
+        width: 100%;
+        text-align: center;
+    }
+
     aside ul::-webkit-scrollbar {
         width: 2.5px;
     }
