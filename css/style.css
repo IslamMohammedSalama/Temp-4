@@ -144,6 +144,13 @@ aside ul a.active {
     background-color: #f6f6f6;
 }
 
+aside ul {
+    overflow: auto;
+    padding-bottom: 60px;
+    height: 100%;
+    padding-right: 10px;
+}
+
 @media (max-width:767px) {
     aside {
         width: 58px;
@@ -161,6 +168,13 @@ aside ul a.active {
         display: none;
     }
 
+    aside ul {
+        padding-bottom: 20px;
+    }
+
+    aside ul::-webkit-scrollbar {
+        width: 2.5px;
+    }
 }
 
 /* End Side Bar */
@@ -741,6 +755,7 @@ aside ul a.active {
     background-color: transparent;
     border-radius: 10px;
 }
+
 /* Helight Columns Using Css */
 .projects table:has(tbody >tr > *:nth-child(1):hover) tbody>tr>*:nth-child(1),
 .projects table:has(tbody >tr > *:nth-child(2):hover) tbody>tr>*:nth-child(2),
