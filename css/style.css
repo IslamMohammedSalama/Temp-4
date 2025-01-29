@@ -1,10 +1,13 @@
 /* Start Global Rules */
 :root {
     --blue-color: #0075ff;
-    --blue-alt-color: #0d69d5;
+    --blue-alt-color: #0256b6;
     --orange-color: #f59e0b;
+    --orange-alt-color: #c9850f;
     --green-color: #22c55e;
+    --green-alt-color: #168f42;
     --red-color: #f44336;
+    --red-alt-color: #b83127;
     --grey-color: #888;
     --main-transition: 0.5s
 }
@@ -256,16 +259,36 @@ aside ul {
     margin-left: 20px;
 }
 
+.content header .notfi {
+    position: relative;
+    text-align: center;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--main-transition);
+    border-radius: 50%;
+    font-size: 15px;
+}
+
+.content header .notfi:hover {
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+
 .content header .notfi::before {
     content: "";
-    right: -5px;
-    top: -5px;
+    right: 4px;
+    top: 4px;
     position: absolute;
     background-color: var(--red-color);
-    width: 10px;
-    height: 10px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
 }
+
+
 
 @media (max-width:767px) {
     .content header {
@@ -742,7 +765,7 @@ aside ul {
 }
 
 .projects table {
-    min-width: 820px;
+    min-width: 850px;
     border-spacing: 5px;
     position: relative;
 }
@@ -751,60 +774,27 @@ aside ul {
 .projects table th {
     position: relative;
     border-radius: 10px;
-    padding: 15px;
+    padding: 20px;
+}
+
+.projects table th {
+    background-color: white;
+    font-weight: bold;
+    z-index: 100 !important;
+    border: 1px solid #eee;
 }
 
 .projects td {
     border: 1px solid transparent;
-    /* border-bottom: 1px solid #eee;
-    border-left: 1px solid #eee; */
     border: 1px solid #eee;
     transition: var(--main-transition);
     background-color: transparent;
     border-radius: 10px;
 }
 
-/* Helight Columns Using Css */
-.projects table:has(tbody >tr > *:nth-child(1):hover) tbody>tr>*:nth-child(1),
-.projects table:has(tbody >tr > *:nth-child(2):hover) tbody>tr>*:nth-child(2),
-.projects table:has(tbody >tr > *:nth-child(3):hover) tbody>tr>*:nth-child(3),
-.projects table:has(tbody >tr > *:nth-child(4):hover) tbody>tr>*:nth-child(4),
-.projects table:has(tbody >tr > *:nth-child(5):hover) tbody>tr>*:nth-child(5),
-.projects table:has(tbody >tr > *:nth-child(6):hover) tbody>tr>*:nth-child(6) {
-    background-color: #faf7f7;
-}
-
-.highlight-column {
-    background-color: #faf7f7 !important;
-}
-
-.projects table tr:hover td {
-    background-color: #faf7f7;
-}
-
-.projects table td:hover {
-    border-color: var(--blue-color);
-    color: var(--blue-color);
-}
-
-.projects table th {
-    background-color: #eee;
-    font-weight: bold;
-    z-index: 100 !important;
-
-    &:first-child {
-        border-top-left-radius: 10px;
-    }
-
-    &:last-child {
-        border-top-right-radius: 10px;
-    }
-}
-
 .projects table span {
     white-space: nowrap
 }
-
 
 .projects table img:not(:first-child) {
     margin-left: -20px;
@@ -818,8 +808,265 @@ aside ul {
     background-color: white;
 }
 
+/* Helight Ceil Using Css */
+.projects table td:hover {
+    border-color: var(--blue-color);
+    color: var(--blue-color);
+}
+
+/* Helight Columns Using Css */
+.projects table:has(tbody >tr > *:nth-child(1):hover) tbody>tr>*:nth-child(1),
+.projects table:has(tbody >tr > *:nth-child(2):hover) tbody>tr>*:nth-child(2),
+.projects table:has(tbody >tr > *:nth-child(3):hover) tbody>tr>*:nth-child(3),
+.projects table:has(tbody >tr > *:nth-child(4):hover) tbody>tr>*:nth-child(4),
+.projects table:has(tbody >tr > *:nth-child(5):hover) tbody>tr>*:nth-child(5),
+.projects table:has(tbody >tr > *:nth-child(6):hover) tbody>tr>*:nth-child(6) {
+    background-color: #f4f4f4;
+}
+
+.highlight-column {
+    background-color: #faf7f7 !important;
+}
+
+/* Helight Rows Using Css */
+.projects table tr:hover td {
+    background-color: #f4f4f4;
+}
+
 /* End Table Widget */
 /* End Content of Dashboard Page */
+/* Start Content Of Courses Page */
+
+.courses-page .wapper {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media (max-width: 767px) {
+    .courses-page .wapper {
+        grid-template-columns: minmax(200px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+}
+
+.courses-page .course {
+    overflow: hidden;
+}
+
+.courses-page .course .cover {
+    max-width: 100%;
+}
+
+.courses-page .course .instructor {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.courses-page .course .description {
+    line-height: 1.6;
+}
+
+.courses-page .course .info {
+    font-size: 13px;
+    border-top: 1px solid #eee;
+}
+
+.courses-page .course .info .title {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    transition: var(--main-transition);
+}
+
+.courses-page .course .info .title:hover {
+    background-color: var(--blue-alt-color);
+    cursor: pointer;
+}
+
+/* End Content Of Courses Page */
+
+/* Start Content of Friends Page */
+.friends-page .wapper {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media (max-width: 767px) {
+    .friends-page .wapper {
+        grid-template-columns: minmax(200px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+}
+
+.friends-page .friend .contact {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.friends-page .friend .contact i {
+    background-color: #eee;
+    color: var(--grey-color);
+    padding: 10px;
+    border-radius: 50%;
+    transition: var(--main-transition);
+}
+
+.friends-page .friend .contact i:hover {
+    background-color: var(--blue-color);
+    color: white;
+}
+
+.friends-page .friend .icons {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin: 15px 0;
+    padding: 15px 0;
+}
+
+.friends-page .friend .icons i {
+    margin-right: 5px;
+}
+
+.friends-page .friend .icons .vip {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 40px;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+}
+
+.friends-page .friend .info>div {
+    border-top: 1px solid #eee;
+}
+
+.friends-page .friend .info>div>a {
+    transition: var(--main-transition);
+}
+
+.friends-page .friend .info>div>a:first-of-type:hover {
+    background-color: var(--blue-alt-color);
+}
+
+.friends-page .friend .info>div>a:last-of-type:hover {
+    background-color: var(--red-alt-color);
+}
+
+/* End Content Of Friends Page */
+/* Start Content of Files Page */
+.files-page .the-page {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+}
+
+/* End Content Of Files Page */
+/* Start Content of plans Page */
+.plans-page .plan .top {
+    outline: 5px solid;
+    border: 5px solid white;
+}
+
+.plans-page .plan .price {
+    font-size: 40px;
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+
+    & span {
+        position: absolute;
+        font-size: 20px;
+        top: 0;
+        left: -20px;
+    }
+}
+
+.plans-page .plan ul {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.plans-page .plan ul li {
+    flex: 1;
+    display: flex;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+    align-items: center;
+}
+
+.plans-page .plan ul li i:first-child {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.plans-page .plan ul li i.help {
+    color: var(--grey-color);
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.plans-page .plan.free ul li i.yes {
+    color: var(--green-color);
+}
+
+.plans-page .plan.basic ul li i.yes {
+    color: var(--orange-color);
+}
+
+.plans-page .plan.pro ul li i.yes {
+    color: var(--blue-color);
+}
+
+.plans-page .plan ul li i:not(.yes, .help) {
+    color: var(--red-color);
+}
+
+.plans-page .plan .join {
+    padding: 12.5px 0;
+    font-weight: bold;
+    font-size: 16px;
+    transition: var(--main-transition);
+}
+
+.plans-page .plan.free .join:hover {
+    background-color: var(--green-alt-color);
+}
+
+.plans-page .plan.basic .join:hover {
+    background-color: var(--orange-alt-color);
+}
+
+.plans-page .plan.pro .join:hover {
+    background-color: var(--blue-alt-color);
+}
+
+.plans-page .plan.free .top {
+    outline-color: var(--green-color);
+}
+
+.plans-page .plan.basic .top {
+    outline-color: var(--orange-color);
+}
+
+.plans-page .plan.pro .top {
+    outline-color: var(--blue-color);
+}
+
+/* End Content of Plans Page */
+
 /* Start Animation */
 @keyframes change-color {
     0% {
