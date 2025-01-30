@@ -1034,19 +1034,29 @@ aside ul {
     padding-right: 10px;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
+
 @media (max-width:767px) {
     .files-page .explorer {
         width: 100%;
     }
 }
+
 .files-page .explorer .file {
-    height: fit-content;
+    transition: var(--main-transition);
+}
+
+.files-page .explorer .file:hover {
+    background-color: #f4f4f4;
 }
 
 .files-page .explorer img {
     width: 64px;
     height: 64px;
     transition: 0.3s;
+}
+
+.files-page .explorer .file:hover img {
+    transform: rotate(1turn);
 }
 
 .files-page .explorer p {
