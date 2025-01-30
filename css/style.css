@@ -1025,7 +1025,7 @@ aside ul {
 }
 
 .files-page .files-stats .upload:hover i {
-    animation: go-up 0.8s infinite;
+    animation: go-up var(--main-transition) infinite;
 }
 
 .files-page .explorer {
@@ -1048,6 +1048,15 @@ aside ul {
 
 .files-page .explorer .file:hover {
     background-color: #f4f4f4;
+}
+
+.files-page .explorer .file i {
+    transition: var(--main-transition);
+}
+
+.files-page .explorer .file i:hover {
+    color: var(--blue-color);
+    animation: go-up var(--main-transition) infinite reverse;
 }
 
 .files-page .explorer img {
