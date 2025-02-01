@@ -9,7 +9,7 @@
     --red-color: #f44336;
     --red-alt-color: #b83127;
     --grey-color: #888;
-    --main-transition: 0.5s
+    --main-transition: 0.3s
 }
 
 * {
@@ -26,6 +26,16 @@ ul {
 
 *:focus {
     outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    transition: var(--main-transition);
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+    opacity: 0;
 }
 
 a {
@@ -79,6 +89,62 @@ h1::before {
 h1::after {
     background-color: black;
     width: 40px;
+}
+
+.toggle-checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+}
+
+.toggle-checkbox+.toggle-switch {
+    height: 30px;
+    width: 70px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    background-color: #ccc;
+    transition: var(--main-transition);
+    cursor: pointer;
+}
+
+.toggle-checkbox:checked+.toggle-switch {
+    background-color: var(--blue-color);
+}
+
+.toggle-checkbox+.toggle-switch::before {
+    content: "\f00d";
+    font-family: var(--fa-style-family-classic);
+    font-weight: 900;
+    position: relative;
+    left: 4px;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--main-transition);
+}
+
+.toggle-checkbox:checked+.toggle-switch::before {
+    content: "\f00c";
+    left: 45px;
+    color: var(--blue-color);
+}
+
+@media (max-width:768px) {
+    div>h2 {
+        text-align: center;
+    }
+
+    div>h2+p {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 /* End Componants */
@@ -189,10 +255,14 @@ aside ul {
 /* End Side Bar */
 /* Start Page Content */
 .content {
-    /* overflow: hidden; */
+    overflow: auto;
     position: relative;
     left: 220px;
     width: calc(100% - 220px);
+}
+
+.content ::-webkit-scrollbar {
+    height: 2.5px;
 }
 
 @media (max-width:767px) {
@@ -211,8 +281,13 @@ aside ul {
     top: 0;
     right: 0;
     z-index: 100000;
+    overflow: auto;
     box-shadow: 20px 0px 15px #ddd;
     padding-left: 0;
+}
+
+.content header::-webkit-scrollbar {
+    height: 2.5px;
 }
 
 @media (max-width:767px) {
@@ -240,12 +315,15 @@ aside ul {
 
 .content header input {
     border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 30px;
     padding-right: 5px;
     border: 1px solid #ddd;
-    border-radius: 10px;
+    border-radius: 50px;
     width: 150px;
     /* margin-left: 5px; */
+    background-color: #eee;
     transition: var(--main-transition);
 }
 
@@ -382,7 +460,7 @@ aside ul {
 .welcome .visit {
     transition: var(--main-transition);
     margin: 0 15px 15px;
-    width: calc(100% -(15px * 2));
+    width: calc(100% -(15px* 2));
 }
 
 .welcome .visit:hover {
@@ -400,6 +478,7 @@ aside ul {
 .quick-draft textarea {
     min-height: 180px;
     resize: none;
+    font-size: 15px;
 }
 
 .quick-draft input[type="text"]:focus,
@@ -682,6 +761,7 @@ aside ul {
 /* Start Social Media Stats Widget */
 .social-media ul li {
     padding-left: 70px;
+    align-items: center;
 
     &.twitter {
         color: #1da1f2;
@@ -728,6 +808,7 @@ aside ul {
 
     .social-media ul li>a {
         margin-top: 10px;
+        width: 100%;
     }
 }
 
@@ -735,6 +816,10 @@ aside ul {
     .social-media ul li i:hover {
         transform: rotate(1turn);
     }
+}
+
+.social-media ul li a {
+    padding: 10px 10px;
 }
 
 .social-media ul li.twitter i,
@@ -826,7 +911,7 @@ aside ul {
 }
 
 .highlight-column {
-    background-color: #faf7f7 !important;
+    background-color: #f4f4f4 !important;
 }
 
 /* Helight Rows Using Css */
@@ -836,6 +921,220 @@ aside ul {
 
 /* End Table Widget */
 /* End Content of Dashboard Page */
+
+/* Start Content of Profile Page */
+.profile-page .overview {
+    overflow: hidden;
+}
+
+.profile-page .info h4 {
+    font-weight: normal;
+}
+
+@media (max-width:767px) {
+    .profile-page .overview {
+        flex-direction: column;
+    }
+}
+
+@media (min-width:768px) {
+    .profile-page .avatar {
+        border-right: 1px solid #eee;
+    }
+}
+
+.profile-page .avatar {
+    width: 300px;
+}
+
+.profile-page .avatar>img {
+    width: 120px;
+    height: 120px;
+}
+
+.profile-page .avatar .prog {
+    width: 150px;
+    height: 10px;
+    border-radius: 50px;
+    position: relative;
+}
+
+.profile-page .avatar .prog span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 50px;
+    height: 100%;
+}
+
+.profile-page .info li {
+    transition: var(--main-transition);
+}
+
+.profile-page .info li:hover {
+    background-color: #f9f9f9;
+}
+
+.profile-page .info li:not(.profile-page .info li:last-of-type) {
+    border-bottom: 1px solid #eee;
+}
+
+.profile-page .info .data {
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 20px; */
+}
+
+@media (max-width:768px) {
+    .profile-page .info .data>* {
+        justify-content: center;
+    }
+}
+
+.profile-page .info .data>* {
+    padding: 10px 0 0;
+    min-width: 240px;
+    display: flex;
+    flex: 1;
+}
+
+.profile-page .info .data>div>span:last-of-type {
+    margin-left: 5px;
+}
+
+.profile-page .skills-card ul li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.profile-page .skills-card ul li {
+    padding: 15px 0;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.profile-page .skills-card ul li span {
+    display: inline-flex;
+    font-size: 14px;
+    padding: 7px 15px;
+}
+
+.profile-page .activities img {
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+}
+
+.profile-page .activities ul li:not(:last-of-type) {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-page .activities ul li span {
+    line-height: normal;
+    -webkit-text-size-adjust: auto;
+}
+
+@media (min-width: 768px) {
+    .profile-page .activities .date {
+        margin-left: auto;
+        text-align: right;
+    }
+}
+
+@media (max-width: 767px) {
+    .profile-page .other-data {
+        flex-direction: column;
+    }
+
+    .profile-page .activities ul li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* End Content of Profile Page */
+
+/* Start Content of Projects Page */
+.projects-page .project .date {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.projects-page .project .team img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.projects-page .project .team {
+    position: relative;
+    min-height: 80px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.projects-page .project .team a {
+    position: relative;
+}
+
+.projects-page .project .team a:not(.projects-page .project .team a:first-of-type) {
+    margin-left: -20px;
+}
+
+.projects-page .project .team a:hover {
+    z-index: 3000;
+}
+
+.projects-page .project .do {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.projects-page .project .do span {
+    padding: 10px;
+    border-radius: 50px;
+}
+
+@media (max-width:767px) {
+    .projects-page .project .info {
+        flex-direction: column;
+    }
+
+    .projects-page .project .info .prog {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+.projects-page .project .prog {
+    width: 260px;
+    height: 10px;
+    border-radius: 50px;
+    position: relative;
+}
+
+.projects-page .project .prog span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 50px;
+    height: 100%;
+}
+
+/* End Content Of Projects Page */
 /* Start Content Of Courses Page */
 
 .courses-page .wapper {
@@ -924,6 +1223,7 @@ aside ul {
 .friends-page .friend .contact i:hover {
     background-color: var(--blue-color);
     color: white;
+    cursor: pointer;
 }
 
 .friends-page .friend .icons {
@@ -953,6 +1253,10 @@ aside ul {
 
 .friends-page .friend .info>div>a {
     transition: var(--main-transition);
+}
+
+.friends-page .friend .info>div>a {
+    padding: 10px 10px;
 }
 
 .friends-page .friend .info>div>a:first-of-type:hover {
@@ -1025,11 +1329,12 @@ aside ul {
 }
 
 .files-page .files-stats .upload:hover i {
-    animation: go-up var(--main-transition) infinite;
+    animation: go-up 0.8s infinite;
 }
 
 .files-page .explorer {
     flex: 1;
+    width: 100%;
     overflow-y: auto;
     height: calc(100vh - 203.74px);
     padding-right: 10px;
@@ -1057,7 +1362,7 @@ aside ul {
 .files-page .explorer .file i:hover {
     color: var(--blue-color);
     cursor: pointer;
-    animation: go-up var(--main-transition) infinite reverse;
+    animation: go-up 0.8s infinite reverse;
 }
 
 .files-page .explorer img {
@@ -1145,14 +1450,13 @@ aside ul {
 
 .plans-page .plan .join {
     padding: 12.5px 0;
-    font-weight: bold;
     font-size: 16px;
     transition: var(--main-transition);
 }
 
-.plans-page .plan.free .join:hover {
+/* .plans-page .plan.free .join:hover {
     background-color: var(--green-alt-color);
-}
+} */
 
 .plans-page .plan.basic .join:hover {
     background-color: var(--orange-alt-color);
@@ -1175,7 +1479,226 @@ aside ul {
 }
 
 /* End Content of Plans Page */
+/* Start Content of Settings Page */
 
+.settings-page .wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 767px) {
+    .settings-page .wrapper {
+        grid-template-columns: minmax(100px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+}
+
+.settings-page .site-control .close-message {
+    border: 1px solid #ccc;
+    resize: none;
+    min-height: 150px;
+    background-color: #eee;
+    font-size: 13px;
+}
+
+.settings-page .general-info label+input {
+    border: 1px solid #ccc;
+    font-size: 13px;
+    padding: 10px;
+}
+
+.settings-page .general-info label+input:disabled {
+    cursor: no-drop;
+    background-color: #ddd;
+    color: #bbb;
+    width: calc(100% - 80px);
+    display: inline-flex;
+}
+
+.settings-page .security-info span+p {
+    margin-bottom: 13px;
+}
+
+.settings-page .security-info ul li>a:last-of-type {
+    padding: 10px 15px;
+}
+
+.settings-page .security-info ul li:not(:last-of-type) {
+    border-bottom: 1px solid #eee;
+}
+
+.settings-page .social-info>div {
+    border: 1px solid #ddd;
+    border-radius: 50px;
+}
+
+.settings-page .social-info>div:focus-within i {
+    color: black;
+}
+
+.settings-page .social-info i {
+    border-radius: 50px 0 0 50px;
+    background-color: #eee;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #ccc;
+    transition: var(--main-transition);
+}
+
+.settings-page .social-info input {
+    height: 40px;
+    border: none;
+    padding-left: 10px;
+    border-radius: 0 50px 50px 0;
+    background-color: #eee;
+    font-size: 13px;
+}
+
+.widgets-control .control input[type="checkbox"] {
+    appearance: none;
+}
+
+.widgets-control .control input[type="checkbox"]+label {
+    padding-left: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.widgets-control .control input[type="checkbox"]+label::before,
+.widgets-control .control input[type="checkbox"]+label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -9px;
+    border-radius: 7.5px;
+    /* border-radius: 50%;*/
+}
+
+.widgets-control .control input[type="checkbox"]+label::before {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--grey-color);
+}
+
+.widgets-control .control input[type="checkbox"]+label::after {
+    transform: scale(0) rotate(1turn);
+    content: "\f00c";
+    font-weight: 900;
+    font-family: var(--fa-style-family-classic);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: white;
+    background-color: var(--blue-color);
+    transition: var(--main-transition);
+}
+
+.widgets-control .control input[type="checkbox"]:checked+label::after {
+    transform: scale(1);
+}
+
+.backup-manager .backup-time input[type="radio"] {
+    appearance: none;
+}
+
+.backup-manager .backup-time label {
+    padding-left: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.backup-manager .backup-time label::before,
+.backup-manager .backup-time label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -9px;
+    /* border-radius: 5px; */
+    border-radius: 50%;
+    transition: var(--main-transition);
+}
+
+.backup-manager .backup-time label::before {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--grey-color);
+}
+
+.backup-manager .backup-time label::after {
+    width: 12px;
+    height: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue-color);
+    transform: translate(35%, 35%) scale(0);
+}
+
+.backup-manager .backup-time input[type="radio"]:checked+label::after {
+    transform: translate(35%, 35%) scale(1);
+}
+
+.backup-manager .backup-time input[type="radio"]:checked+label::before {
+    border-color: var(--blue-color);
+}
+
+.backup-manager .servers {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.backup-manager .servers input[type="radio"] {
+    appearance: none;
+}
+
+.backup-manager .servers .server {
+    border: 2px solid #eee;
+    position: relative;
+    justify-content: center;
+    transition: var(--main-transition);
+}
+
+@media (min-width:768px) {
+    .backup-manager .servers .server:not(:last-of-type) {
+        margin-right: 5px;
+    }
+}
+
+.backup-manager .servers .server label {
+    cursor: pointer;
+}
+
+.backup-manager .servers .server label,
+.backup-manager .servers .server i {
+    transition: var(--main-transition);
+}
+
+.backup-manager .servers input[type="radio"]:checked+.server {
+    border-color: var(--blue-color);
+}
+
+.backup-manager .servers input[type="radio"]:checked+.server * {
+    color: var(--blue-color);
+
+}
+
+@media (max-width:767px) {
+    .backup-manager .servers {
+        flex-direction: column;
+    }
+}
+
+/* End Content of Settings Page */
 /* Start Animation */
 @keyframes change-color {
     0% {
